@@ -17,9 +17,9 @@
 
 # Test Scenario
 * When application is running, failover AWS Aurora for Postgres.
-* Expected:
+* **Expected**:
    * TestDataWriter and TestDataReader are able to continue with zero or minimal (5-10 seconds) interruption.
-* Observed:
+* **Observed**:
    * TestDataReader (read-only cluster URL) is able to reconnect to new replica within 30-60 seconds
    * TestDataWriter (read-write cluster URL) is able to reconnect to new writer after 8-10 minutes
    * TestDataWriter will throw "_org.postgresql.util.PSQLException: ERROR: cannot execute INSERT in a read-only transaction_" errors while waiting to reconnect 
